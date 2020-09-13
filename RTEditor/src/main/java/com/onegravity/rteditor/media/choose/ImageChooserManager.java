@@ -101,7 +101,7 @@ class ImageChooserManager extends MediaChooserManager implements ImageProcessorL
                     // There are compatibility issues with FileProvider Uris on lower versions
                     uriForCamera = Uri.fromFile(imageFile);
                 } else {
-                    uriForCamera = FileProvider.getUriForFile(mActivity, BuildConfig.APPLICATION_ID, imageFile);
+                    uriForCamera = FileProvider.getUriForFile(mActivity, BuildConfig.LIBRARY_PACKAGE_NAME, imageFile);
                 }
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                         .putExtra(MediaStore.EXTRA_OUTPUT, uriForCamera);
